@@ -1,8 +1,24 @@
 {
   "name": "table-column-filter",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "src/directives/index.js",
+  "description": "A Vue component that controls the columns of a table",
+  "author": "唐小清, git-lt, mzdeng",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tangdada/table-column-filter"
+  },
+  "keywords": [
+    "vue",
+    "table",
+    "component",
+    "components",
+    "ui",
+    "column",
+    "filter"
+  ],
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
