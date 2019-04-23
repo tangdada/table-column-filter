@@ -13,6 +13,8 @@ npm install table-column-filter
 import 'table-column-filter'
 or
 require('table-column-filter')
+
+in main.js or anywhere
 ```
 
 ### step 3
