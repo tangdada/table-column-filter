@@ -32,13 +32,13 @@ eg.
 ## options
 
 ```
-basic: basic column, cannot cancel
+**basic**: basic column, cannot cancel
 eg. <th col="col2" basic>col2</th>
 
-unchecked：default empty
+**unchecked**：default empty
 eg. <th col="col3" unchecked>col3</th>
 
-if you want the simple version, you can use directive v-table-column-filter-simple
+**v-table-column-filter-simple**：if you want the simple version, you can use directive v-table-column-filter-simple
 eg. <table v-table-column-filter-simple>
 
 ```
