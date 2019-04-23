@@ -1,6 +1,6 @@
 # table-column-filter
 
-A Vue component that controls the columns of a table
+A Vue component(directive) that controls the columns of a table
 
 It's available for vue2 and vue3
 
