@@ -2,7 +2,7 @@
 
 A Vue component that controls the columns of a table
 
-vue2 and vue3 are both available
+It's available for vue2 and vue3
 
 ## How to use ?
 ### step 1
