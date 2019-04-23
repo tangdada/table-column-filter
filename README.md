@@ -1,29 +1,30 @@
 # table-column-filter
 
-## Project setup
+vue2 and vue3 are both available
+
+## How to use ?
+### step 1
 ```
-npm install
+npm install table-column-filter
 ```
 
-### Compiles and hot-reloads for development
+### step 2
 ```
-npm run dev
-```
-
-### Compiles and minifies for production
-```
-npm run build
+import 'table-column-filter'
+or
+require('table-column-filter')
 ```
 
-### Run your tests
+### step 3
 ```
-npm run test
+1. add directive v-table-column-filter to table tag
+2. add attribute "col" to "th" tag
+
+<table v-table-column-filter>
+  <th col="col1">col1</th>
+  <th col="col2">col2</th>
+  <th col="col3">col3</th>
+  <th col="col4">col4</th>
+</table>
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
