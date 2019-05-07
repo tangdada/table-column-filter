@@ -6,7 +6,7 @@ It's available for vue2 and vue3
 
 
 <p align="center">
-  <img src="https://mytijian-img.oss-cn-hangzhou.aliyuncs.com/official-web/table-column-filter-demo.png">
+  <img src="https://mytijian-img.oss-cn-hangzhou.aliyuncs.com/official-web/table-filter-demo.png">
 </p>
 
 simple:
