@@ -6,12 +6,12 @@ It's available for vue2 and vue3
 
 
 <p align="center">
-  <img width="200" src="https://mytijian-img.oss-cn-hangzhou.aliyuncs.com/official-web/table-column-filter-demo.png">
+  <img src="https://mytijian-img.oss-cn-hangzhou.aliyuncs.com/official-web/table-column-filter-demo.png">
 </p>
 
 simple:
 <p align="center">
-  <img width="200" src="https://mytijian-img.oss-cn-hangzhou.aliyuncs.com/official-web/table-column-filter-demo-simple.png">
+  <img src="https://mytijian-img.oss-cn-hangzhou.aliyuncs.com/official-web/table-column-filter-demo-simple.png">
 </p>
 
 ## How to use ?
