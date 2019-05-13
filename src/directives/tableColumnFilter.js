@@ -3,15 +3,19 @@
 let columns = []
 let columns_bak = []
 let initialColumns = []
+let tableId;
 
 const dirctive = {
-  inserted: function(el) {
-    let cols = getColumnOptions(el)
+  inserted: function(el, binding) {
+    tableId = binding.value
+    let cols = getColumnOptions(el) 
     initialColumns = cols.map(c => c.name)
     columns = cols.map(col => {
       col.selected = !col.unchecked
       return col
     })
+    getCacheColmuns()
+
     columns_bak = JSON.parse(JSON.stringify(columns)) // 备份修改前的列信息，点击“取消”时用到
 
     let containerEle = getContainerEle()
@@ -38,6 +42,35 @@ const dirctive = {
   componentUpdated: function(el) {
     resolveTableBySelectColumns(el, columns)
   },
+}
+// 获取缓存中的列设置
+const getCacheColmuns = () => {
+  let cols;
+  try {
+    cols = JSON.parse(localStorage.getItem('cache-columns-' + tableId))
+    let cacheColsMap = {}
+    cols.forEach(c => {
+      cacheColsMap[c.name] = c
+    })
+    columns = columns.map(col => {
+      if (cacheColsMap[col.name]) {
+        col.selected = cacheColsMap[col.name].selected
+      }
+      return col
+    })
+  } catch(err) {
+
+  }
+}
+// 缓存列设置
+const setCacheColmuns = () => {
+  if (tableId && localStorage && localStorage.setItem) {
+    for (let i=0;i<columns.length;i++) {
+      columns[i].unchecked = !columns[i].selected
+    }
+    let s = JSON.stringify(columns)
+    localStorage.setItem('cache-columns-' + tableId, s)
+  }
 }
 // <th col="xxx" basic(默认不设置) unchecked(默认不设置) >xxx</th>
 const getColumnOptions = (el) => {
@@ -245,6 +278,7 @@ const getModalFootEle = (el) => {
     columns_bak = JSON.parse(JSON.stringify(columns))
     resolveTableBySelectColumns(el, columns)
     closeModal()
+    setCacheColmuns()
   }
   ele.appendChild(btn)
   ele.appendChild(clo)

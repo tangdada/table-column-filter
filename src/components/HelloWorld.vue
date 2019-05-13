@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <table class="mt-table" v-table-column-filter>
+    <table class="mt-table" v-table-column-filter="'table-column-10000'">
       <tr>
         <th col="列1">列1</th>
         <th col="列2" basic>列2</th>

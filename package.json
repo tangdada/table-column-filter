@@ -1,6 +1,6 @@
 {
   "name": "table-column-filter",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "main": "src/directives/index.js",
   "description": "A Vue component that controls the columns of a table",
