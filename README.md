@@ -22,11 +22,11 @@ npm install table-column-filter
 
 ### step 2
 ```
-import 'table-column-filter'
-or
-require('table-column-filter')
+import tableColumnFilter 'table-column-filter'
 
-in main.js or anywhere
+Vue.use(tableColumnFilter)
+
+in main.js
 ```
 
 ### step 3

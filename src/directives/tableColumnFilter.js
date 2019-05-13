@@ -1,11 +1,10 @@
-import Vue from 'vue'
 // {col: xxx, basic, unchecked, selected: xxx}
 // 每列内容定义为对象，name:列名，basic:不可更改，unchecked: 是否默认不选中, selected: 是否选中
 let columns = []
 let columns_bak = []
 let initialColumns = []
 
-Vue.directive('tableColumnFilter', {
+const dirctive = {
   inserted: function(el) {
     let cols = getColumnOptions(el)
     initialColumns = cols.map(c => c.name)
@@ -39,7 +38,7 @@ Vue.directive('tableColumnFilter', {
   componentUpdated: function(el) {
     resolveTableBySelectColumns(el, columns)
   },
-})
+}
 // <th col="xxx" basic(默认不设置) unchecked(默认不设置) >xxx</th>
 const getColumnOptions = (el) => {
   let thsEle = el.getElementsByTagName('th')
@@ -322,3 +321,5 @@ const resolveTableBySelectColumns = (el, columns) => {
     }
   }
 }
+
+export default dirctive

@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 let updateTiming = undefined;
 // <th col="xxx" basic(默认不设置) unchecked(默认不设置) >xxx</th>
 const getColumnOptions = (el) => {
@@ -19,7 +17,7 @@ const getColumnOptions = (el) => {
   }
   return columnsTransFromThs
 }
-Vue.directive('tableColumnFilterSimple', {
+const directive = {
   inserted: function(el) {
     let cols = getColumnOptions(el)
     let newEle = document.createElement('div')
@@ -120,4 +118,6 @@ Vue.directive('tableColumnFilterSimple', {
       }
     }, 400)
   },
-})
+}
+
+export default directive
