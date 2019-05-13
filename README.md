@@ -22,7 +22,7 @@ npm install table-column-filter
 
 ### step 2
 ```
-import tableColumnFilter 'table-column-filter'
+import tableColumnFilter from 'table-column-filter'
 
 Vue.use(tableColumnFilter)
 
