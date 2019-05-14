@@ -64,7 +64,7 @@ const getCacheColmuns = () => {
 }
 // 缓存列设置
 const setCacheColmuns = () => {
-  if (tableId && localStorage && localStorage.setItem) {
+  if (tableId && (typeof localStorage == 'object')) {
     for (let i=0;i<columns.length;i++) {
       columns[i].unchecked = !columns[i].selected
     }
