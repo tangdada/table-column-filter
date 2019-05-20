@@ -120,4 +120,4 @@ const directive = {
   },
 }
 
-export default directive
+module.exports = directive

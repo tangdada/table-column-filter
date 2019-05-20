@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import direcs from './directives'
+const direcs = require('../dist/js/index.js')
 
 Vue.config.productionTip = false
-
 Vue.use(direcs)
 new Vue({
   render: h => h(App),

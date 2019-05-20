@@ -1,5 +1,5 @@
-import tableColumnFilterSimple from './tableColumnFilterSimple'
-import tableColumnFilter from './tableColumnFilter'
+const tableColumnFilterSimple = require('./tableColumnFilterSimple.js')
+const tableColumnFilter = require('./tableColumnFilter.js')
 
 
 const install = function (Vue) {
@@ -7,7 +7,7 @@ const install = function (Vue) {
   Vue.directive('tableColumnFilterSimple', tableColumnFilterSimple)
 }
 
-export default {
+module.exports = {
   install,
   tableColumnFilterSimple,
   tableColumnFilter

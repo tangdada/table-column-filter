@@ -6,6 +6,7 @@ uglify = require('gulp-uglify');
 clean = require('gulp-clean');
 babel = require('gulp-babel'); //支持es6
 combiner = require('stream-combiner2');
+gutil = require('gulp-util');
 
 gulp.task('clean', function () {
   gulp.src(['dist/*'], { read: false })
@@ -20,24 +21,26 @@ gulp.task('src-move', function () {
 //压缩js文件
 gulp.task('js-min', function () {
   gulp.src('src/directives/*.js')
-    .pipe(babel({
-      presets: ['es2015']
-    }))
+    .pipe(babel())
+    .on('error', function(err) {
+        gutil.log(gutil.colors.red('[Error]'), err.toString());
+    })
     .pipe(uglify())
-    .pipe(rename({ suffix: '.min' }))
+    // .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/js'));
 });
 
 //stream
 gulp.task('js-min-stream', function () {
   var combined = combiner.obj([
-    gulp.src('src/directives/*.js'),
-    babel({
-      presets: ['es2015']
-    }),
-    uglify(),
-    rename({ suffix: '.min' }),
-    gulp.dest('dist/js')
+    gulp.src('src/directives/*.js')
+    .pipe(babel())
+    .pipe(uglify())
+    .on('error', function(err) {
+        gutil.log(gutil.colors.red('[Error]'), err.toString());
+    })
+    // .pipe(rename({ suffix: '.min' }))
+    .pipe(gulp.dest('dist/js'))
   ]);
 
   // 任何在上面的 stream 中发生的错误，都不会抛出，
@@ -47,8 +50,8 @@ gulp.task('js-min-stream', function () {
   return combined;
 });
 
-gulp.task('watch', ['js-min'], function () {
-  gulp.watch(['src/directives/*.js'], ['js-min-stream']);
+gulp.task('watch', ['clean', 'js-min'], function () {
+  gulp.watch(['src/directives/*.js'], ['clean', 'js-min']);
 });
 
 gulp.task('default', ['watch']);

@@ -356,4 +356,4 @@ const resolveTableBySelectColumns = (el, columns) => {
   }
 }
 
-export default dirctive
+module.exports = dirctive
