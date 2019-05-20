@@ -62,3 +62,9 @@ eg. <th col="col3" unchecked>col3</th>
 if you want the simple version, you can use directive v-table-column-filter-simple
 eg. <table v-table-column-filter-simple>
 ```
+### use the cache of saving at last time(localStorage)
+```
+define unique key:
+
+<table v-table-column-filter="'customer-table-01'">
+```
