@@ -1,13 +1,7 @@
-{
-  "presets": [
-    ["@babel/preset-env", { "modules": "commonjs" }]
-  ],
-  "plugins": ["@babel/plugin-transform-runtime"],
-  "comments": false,
-  // "env": {
-  //   "test": {
-  //     "presets": ["env", "stage-2"],
-  //     "plugins": [ "istanbul" ]
-  //   }
-  // }
-}
+{  
+  "presets": [  
+    ["es2015", { "modules": "commonjs" }]
+    ,"vue"
+  ],  
+  "plugins": []  
+}  

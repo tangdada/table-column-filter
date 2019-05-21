@@ -25,7 +25,7 @@ gulp.task('js-min', function () {
     .on('error', function(err) {
         gutil.log(gutil.colors.red('[Error]'), err.toString());
     })
-    .pipe(uglify())
+    // .pipe(uglify())
     // .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('dist/js'));
 });
@@ -50,8 +50,8 @@ gulp.task('js-min-stream', function () {
   return combined;
 });
 
-gulp.task('watch', ['clean', 'js-min'], function () {
-  gulp.watch(['src/directives/*.js'], ['clean', 'js-min']);
-});
-
-gulp.task('default', ['watch']);
+gulp.task('default', ['clean', 'js-min']);
+// gulp.task('watch', ['clean', 'js-min'], function () {
+//   gulp.watch(['src/directives/*.js'], ['clean', 'js-min']);
+// });
+// gulp.task('default', ['watch']);
