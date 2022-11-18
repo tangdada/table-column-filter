@@ -47,7 +47,7 @@
     "@babel/runtime": "^7.1.5",
     "@vue/cli-plugin-babel": "^3.6.0",
     "@vue/cli-plugin-eslint": "^3.6.0",
-    "@vue/cli-service": "^3.6.0",
+    "@vue/cli-service": "^5.0.8",
     "autoprefixer": "^9.3.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
